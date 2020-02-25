@@ -93,15 +93,12 @@ public class Quadratic {
 	 */
 	public double[] computeRealRoots() {
 		//get roots
-		double x1 = 0;
-		double x2 = 0;
 		double[] roots = new double[2];
 		//solve for first root
-		x1 =  (-b + getDiscriminant())/(2.0 * a);
+		roots[0] =  (-b + getDiscriminant())/(2.0 * a);
 		//solve for second root
-		x2 = (-b - getDiscriminant())/(2.0 * a);
-		roots[0] = x1;
-		roots[1] = x2;
+		roots[1] = (-b - getDiscriminant())/(2.0 * a);
+		//return roots array
 		return roots;
 				
 	}
@@ -115,8 +112,6 @@ public class Quadratic {
 	}
 	@Override
 	public String toString() {
-		return ( "x1,x2 = (((-)" + b + " +- SQRT((" + b + "*" + b + ") - (4*" + a + "*" + c +")))/" + "(2*" + a + ")");
-	}
-	
+		return ( "x1,x2 = " + a + "x^2+" + b + "+" + c);
 
 }
